@@ -2,17 +2,33 @@
 layout: page
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+<div class="home">
+  <h1>Welcome!</h1>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <p>Hi, I'm Nathan. I work in Operations and I'm passionate about technology, cybersecurity, and problem-solving.</p>
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+  <h2>About Me</h2>
+  <p>I'm a technology professional with experience in operations and cybersecurity. I enjoy tackling complex challenges and continuously learning new skills.</p>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+  <h2>What I Do</h2>
+  <ul>
+    <li>Operations Management</li>
+    <li>Cybersecurity</li>
+    <li>Technical Problem Solving</li>
+  </ul>
+
+  <h2>Recent Posts</h2>
+  <div class="posts">
+    {% for post in site.posts limit:3 %}
+      <article class="post">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <div class="entry">
+          {{ post.excerpt }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      </article>
+    {% endfor %}
+  </div>
+
+  <p><a href="{{ site.baseurl }}/about">Learn more about me →</a></p>
 </div>
